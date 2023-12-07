@@ -13,7 +13,10 @@
 		AC877E692B21FC6D00B87FAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC877E682B21FC6D00B87FAC /* Preview Assets.xcassets */; };
 		AC877E712B21FC8200B87FAC /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC877E702B21FC8200B87FAC /* UserDTO.swift */; };
 		AC877E742B21FE3E00B87FAC /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC877E732B21FE3E00B87FAC /* APIRequest.swift */; };
-		AC877E782B21FF5800B87FAC /* UsersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC877E772B21FF5800B87FAC /* UsersProvider.swift */; };
+		AC877E812B22133A00B87FAC /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC877E802B22133A00B87FAC /* UsersViewModel.swift */; };
+		AC877E842B22136C00B87FAC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC877E832B22136C00B87FAC /* UserModel.swift */; };
+		AC877E862B221D3C00B87FAC /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC877E852B221D3C00B87FAC /* UserView.swift */; };
+		AC877E882B222FFD00B87FAC /* UsersListVw.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC877E872B222FFD00B87FAC /* UsersListVw.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +27,10 @@
 		AC877E682B21FC6D00B87FAC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC877E702B21FC8200B87FAC /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		AC877E732B21FE3E00B87FAC /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		AC877E772B21FF5800B87FAC /* UsersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersProvider.swift; sourceTree = "<group>"; };
+		AC877E802B22133A00B87FAC /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		AC877E832B22136C00B87FAC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		AC877E852B221D3C00B87FAC /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		AC877E872B222FFD00B87FAC /* UsersListVw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListVw.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +63,10 @@
 		AC877E602B21FC6B00B87FAC /* RandomUser */ = {
 			isa = PBXGroup;
 			children = (
+				AC877E792B2204F600B87FAC /* Application */,
+				AC877E7B2B22123B00B87FAC /* Features */,
+				AC877E7A2B22050100B87FAC /* Resources */,
 				AC877E752B21FF2800B87FAC /* Network */,
-				AC877E612B21FC6B00B87FAC /* RandomUserApp.swift */,
-				AC877E632B21FC6B00B87FAC /* ContentView.swift */,
-				AC877E652B21FC6D00B87FAC /* Assets.xcassets */,
-				AC877E672B21FC6D00B87FAC /* Preview Content */,
 			);
 			path = RandomUser;
 			sourceTree = "<group>";
@@ -95,17 +100,69 @@
 			children = (
 				AC877E722B21FE3100B87FAC /* APIRequest */,
 				AC877E6F2B21FC7600B87FAC /* UserDTO */,
-				AC877E762B21FF3F00B87FAC /* UsersProvider */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		AC877E762B21FF3F00B87FAC /* UsersProvider */ = {
+		AC877E792B2204F600B87FAC /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				AC877E772B21FF5800B87FAC /* UsersProvider.swift */,
+				AC877E612B21FC6B00B87FAC /* RandomUserApp.swift */,
+				AC877E632B21FC6B00B87FAC /* ContentView.swift */,
 			);
-			path = UsersProvider;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		AC877E7A2B22050100B87FAC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC877E652B21FC6D00B87FAC /* Assets.xcassets */,
+				AC877E672B21FC6D00B87FAC /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC877E7B2B22123B00B87FAC /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				AC877E7C2B22124500B87FAC /* Users */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		AC877E7C2B22124500B87FAC /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				AC877E822B22136300B87FAC /* UserModel */,
+				AC877E7E2B22125400B87FAC /* UsersViewModel */,
+				AC877E7F2B22126A00B87FAC /* UsersView */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		AC877E7E2B22125400B87FAC /* UsersViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC877E802B22133A00B87FAC /* UsersViewModel.swift */,
+			);
+			path = UsersViewModel;
+			sourceTree = "<group>";
+		};
+		AC877E7F2B22126A00B87FAC /* UsersView */ = {
+			isa = PBXGroup;
+			children = (
+				AC877E852B221D3C00B87FAC /* UserView.swift */,
+				AC877E872B222FFD00B87FAC /* UsersListVw.swift */,
+			);
+			path = UsersView;
+			sourceTree = "<group>";
+		};
+		AC877E822B22136300B87FAC /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC877E832B22136C00B87FAC /* UserModel.swift */,
+			);
+			path = UserModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,11 +235,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC877E782B21FF5800B87FAC /* UsersProvider.swift in Sources */,
+				AC877E842B22136C00B87FAC /* UserModel.swift in Sources */,
+				AC877E812B22133A00B87FAC /* UsersViewModel.swift in Sources */,
+				AC877E862B221D3C00B87FAC /* UserView.swift in Sources */,
 				AC877E642B21FC6B00B87FAC /* ContentView.swift in Sources */,
 				AC877E742B21FE3E00B87FAC /* APIRequest.swift in Sources */,
 				AC877E622B21FC6B00B87FAC /* RandomUserApp.swift in Sources */,
 				AC877E712B21FC8200B87FAC /* UserDTO.swift in Sources */,
+				AC877E882B222FFD00B87FAC /* UsersListVw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +375,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RandomUser/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RandomUser/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 63XWRVA4JU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -345,7 +405,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RandomUser/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RandomUser/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 63XWRVA4JU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
