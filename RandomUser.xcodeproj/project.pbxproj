@@ -11,6 +11,9 @@
 		AC877E642B21FC6B00B87FAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC877E632B21FC6B00B87FAC /* ContentView.swift */; };
 		AC877E662B21FC6D00B87FAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC877E652B21FC6D00B87FAC /* Assets.xcassets */; };
 		AC877E692B21FC6D00B87FAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC877E682B21FC6D00B87FAC /* Preview Assets.xcassets */; };
+		AC877E712B21FC8200B87FAC /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC877E702B21FC8200B87FAC /* UserDTO.swift */; };
+		AC877E742B21FE3E00B87FAC /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC877E732B21FE3E00B87FAC /* APIRequest.swift */; };
+		AC877E782B21FF5800B87FAC /* UsersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC877E772B21FF5800B87FAC /* UsersProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		AC877E632B21FC6B00B87FAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC877E652B21FC6D00B87FAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC877E682B21FC6D00B87FAC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC877E702B21FC8200B87FAC /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		AC877E732B21FE3E00B87FAC /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		AC877E772B21FF5800B87FAC /* UsersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 		AC877E602B21FC6B00B87FAC /* RandomUser */ = {
 			isa = PBXGroup;
 			children = (
+				AC877E752B21FF2800B87FAC /* Network */,
 				AC877E612B21FC6B00B87FAC /* RandomUserApp.swift */,
 				AC877E632B21FC6B00B87FAC /* ContentView.swift */,
 				AC877E652B21FC6D00B87FAC /* Assets.xcassets */,
@@ -65,6 +72,40 @@
 				AC877E682B21FC6D00B87FAC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC877E6F2B21FC7600B87FAC /* UserDTO */ = {
+			isa = PBXGroup;
+			children = (
+				AC877E702B21FC8200B87FAC /* UserDTO.swift */,
+			);
+			path = UserDTO;
+			sourceTree = "<group>";
+		};
+		AC877E722B21FE3100B87FAC /* APIRequest */ = {
+			isa = PBXGroup;
+			children = (
+				AC877E732B21FE3E00B87FAC /* APIRequest.swift */,
+			);
+			path = APIRequest;
+			sourceTree = "<group>";
+		};
+		AC877E752B21FF2800B87FAC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AC877E722B21FE3100B87FAC /* APIRequest */,
+				AC877E6F2B21FC7600B87FAC /* UserDTO */,
+				AC877E762B21FF3F00B87FAC /* UsersProvider */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AC877E762B21FF3F00B87FAC /* UsersProvider */ = {
+			isa = PBXGroup;
+			children = (
+				AC877E772B21FF5800B87FAC /* UsersProvider.swift */,
+			);
+			path = UsersProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC877E782B21FF5800B87FAC /* UsersProvider.swift in Sources */,
 				AC877E642B21FC6B00B87FAC /* ContentView.swift in Sources */,
+				AC877E742B21FE3E00B87FAC /* APIRequest.swift in Sources */,
 				AC877E622B21FC6B00B87FAC /* RandomUserApp.swift in Sources */,
+				AC877E712B21FC8200B87FAC /* UserDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +332,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = CIC.RandomUser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -317,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = CIC.RandomUser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
