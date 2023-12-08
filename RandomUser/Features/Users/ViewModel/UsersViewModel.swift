@@ -10,6 +10,7 @@ import Foundation
 class UsersViewModel: ObservableObject {
     @Published private(set) var users: [UserModel] = []
     private var preloadModel = PreloadModel()
+    @Published var fetchAlertModel = FetchAlertModel()
     
     @MainActor func fetchUsers() async {
         do {
@@ -20,10 +21,12 @@ class UsersViewModel: ObservableObject {
                 users.append(contentsOf: fetchedUsers)
                 preloadModel.currentPage += 1
             case .failure(let error):
-                print("Error: \(error)")
+                handleFetchAlert()
+                print("Error: \(error.localizedDescription)")
             }
         } catch {
-            print("Error: \(error)")
+            handleFetchAlert()
+            print("Error: \(error.localizedDescription)")
         }
     }
     
@@ -39,5 +42,9 @@ class UsersViewModel: ObservableObject {
         if let index = users.firstIndex(where: { $0.id == user.id }) {
             users[index].isFavorite.toggle()
         }
+    }
+    
+    func handleFetchAlert() {
+        fetchAlertModel.isPresented.toggle()
     }
 }

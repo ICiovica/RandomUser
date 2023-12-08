@@ -24,7 +24,7 @@ private extension ContentView {
     }
     
     var titleVw: some View {
-        Text("Users")
+        Text("users_title")
             .font(.system(.title3, design: .rounded, weight: .bold))
             .frame(maxWidth: .infinity, minHeight: 64)
     }

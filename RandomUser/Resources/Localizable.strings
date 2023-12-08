@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  RandomUser
+
+  Created by IonutCiovica on 08/12/2023.
+  
+*/
+
+// MARK: - General
+"general_dismiss" = "Dimiss";
+
+// MARK: - Users
+"users_title" = "Users";
+
+// MARK: - Fetch Alert
+"fetch_alert_title" = "Ooops!";
+"fetch_alert_message" = "Something went wrong, please try again.";

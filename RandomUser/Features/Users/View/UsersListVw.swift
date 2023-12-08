@@ -20,6 +20,16 @@ struct UsersListVw: View {
             }
         }
         .listStyle(.plain)
+        .alert(LocalizedStringKey(vm.fetchAlertModel.title),
+               isPresented: $vm.fetchAlertModel.isPresented,
+               actions: {
+            Button("general_dismiss") {
+                vm.handleFetchAlert()
+            }
+        },
+               message: {
+            Text(LocalizedStringKey(vm.fetchAlertModel.message))
+        })
         .task {
             await vm.fetchUsers()
         }
