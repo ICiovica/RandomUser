@@ -24,20 +24,10 @@ struct UserView: View {
 // MARK: - Views
 private extension UserView {
     var imageVw: some View {
-        AsyncImage(url: URL(string: user.image)) { image in
+        AsyncImageCache(url: user.imageURL, userInitials: user.name.first?.description) { image in
             image.resizable()
                 .frame(width: 48, height: 48)
                 .cornerRadius(24)
-        } placeholder: { placeholderVw }
-    }
-    
-    var placeholderVw: some View {
-        ZStack {
-            Circle()
-                .fill(.yellowApp)
-                .frame(width: 48, height: 48)
-            Text(user.name.first?.description ?? "N/A")
-                .font(.system(.title3, design: .rounded, weight: .medium))
         }
     }
     
@@ -78,5 +68,10 @@ private extension UserView {
 }
 
 #Preview {
-    UserView(user: .init()) {_ in}
+    UserView(user: UserModel(
+        name: "John Doe",
+        email: "john.doe@gmail.com",
+        registration: "02:14",
+        imageURL: nil)
+    ) {_ in}
 }

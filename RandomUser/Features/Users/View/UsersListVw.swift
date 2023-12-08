@@ -14,6 +14,9 @@ struct UsersListVw: View {
         List {
             ForEach(vm.users, id: \.id) { user in
                 UserView(user: user, action: vm.starIsTapped(_:))
+                    .task {
+                        await vm.checkIfReachedUserShouldLoadNextPage(user)
+                    }
             }
         }
         .listStyle(.plain)
