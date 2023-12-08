@@ -24,10 +24,11 @@ struct UserView: View {
 // MARK: - Views
 private extension UserView {
     var imageVw: some View {
-        AsyncImageCache(url: user.imageURL, userInitials: user.name.first?.description) { image in
+        AsyncImageCache(url: user.imageURL, placeholderInitials: user.name.first?.description) { image in
             image.resizable()
-                .frame(width: 48, height: 48)
-                .cornerRadius(24)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: UserConstants.imageFrame)
+                .clipShape(Circle())
         }
     }
     
@@ -40,7 +41,7 @@ private extension UserView {
                 .foregroundStyle(.black.opacity(0.75))
         }
         .lineLimit(1)
-        .minimumScaleFactor(0.9)
+        .minimumScaleFactor(0.5)
     }
     
     var timeAndStarVw: some View {

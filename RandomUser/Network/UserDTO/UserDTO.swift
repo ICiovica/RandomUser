@@ -33,5 +33,5 @@ struct Name: Codable {
 
 // MARK: - Picture
 struct Picture: Codable {
-    let large, medium, thumbnail: String
+    let thumbnail: String
 }

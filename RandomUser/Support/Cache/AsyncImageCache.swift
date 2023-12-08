@@ -9,16 +9,16 @@ import SwiftUI
 
 struct AsyncImageCache<Content>: View where Content: View {
     private let url: URL?
-    private let userInitials: String?
+    private let placeholderInitials: String?
     private let content: (Image) -> Content
     
     init(
         url: URL?,
-        userInitials: String?,
+        placeholderInitials: String?,
         @ViewBuilder content: @escaping (Image) -> Content
     ) {
         self.url = url
-        self.userInitials = userInitials
+        self.placeholderInitials = placeholderInitials
         self.content = content
     }
     
@@ -46,15 +46,13 @@ private extension AsyncImageCache {
         ZStack {
             Circle()
                 .fill(.yellowApp)
-                .frame(width: 48, height: 48)
-            Text(userInitials ?? "N/A")
+                .frame(width: UserConstants.imageFrame, height: UserConstants.imageFrame)
+            Text(placeholderInitials ?? "N/A")
                 .font(.system(.title3, design: .rounded, weight: .medium))
         }
     }
 }
 
 #Preview {
-    AsyncImageCache(url: nil, userInitials: nil, content: { image in
-        image
-    })
+    AsyncImageCache(url: nil, placeholderInitials: nil) {_ in}
 }
