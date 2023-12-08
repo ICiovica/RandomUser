@@ -29,27 +29,32 @@ struct AsyncImageCache<Content>: View where Content: View {
             asyncImageBlock()
         }
     }
-    
+}
+
+// MARK: - Views
+private extension AsyncImageCache {
     @MainActor private func asyncImageBlock() -> some View {
         AsyncImage(url: url) { image in
             if let url {
                 ImageCache[url] = image
             }
             return content(image)
-        } placeholder: {
-            ZStack {
-                Circle()
-                    .fill(.yellowApp)
-                    .frame(width: 48, height: 48)
-                Text(userInitials ?? "N/A")
-                    .font(.system(.title3, design: .rounded, weight: .medium))
-            }
+        } placeholder: { placeholderVw }
+    }
+    
+    var placeholderVw: some View {
+        ZStack {
+            Circle()
+                .fill(.yellowApp)
+                .frame(width: 48, height: 48)
+            Text(userInitials ?? "N/A")
+                .font(.system(.title3, design: .rounded, weight: .medium))
         }
     }
 }
 
 #Preview {
-    AsyncImageCache(url: UserModel().imageURL, userInitials: nil, content: { image in
+    AsyncImageCache(url: nil, userInitials: nil, content: { image in
         image
     })
 }

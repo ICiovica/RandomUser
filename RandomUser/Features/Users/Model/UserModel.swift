@@ -16,7 +16,7 @@ struct UserModel: Identifiable {
     
     var isFavorite: Bool = false
     
-    init(name: String = "", email: String = "", registration: String = "", imageURL: URL? = nil) {
+    init(name: String, email: String, registration: String, imageURL: URL?) {
         self.name = name
         self.email = email
         self.registration = registration
