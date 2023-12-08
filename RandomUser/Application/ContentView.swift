@@ -35,7 +35,7 @@ private extension ContentView {
         } label: {
             HStack {
                 Spacer()
-                Image(systemName: "magnifyingglass")
+                Image(systemName: SystemImages.search)
             }
             .font(.system(.title3, design: .rounded, weight: .medium))
             .foregroundStyle(.black)

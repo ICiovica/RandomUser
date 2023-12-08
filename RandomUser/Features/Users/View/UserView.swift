@@ -59,7 +59,7 @@ private extension UserView {
                 action(user)
             }
         } label: {
-            Image(systemName: user.isFavorite ? "star.fill" : "star")
+            Image(systemName: user.isFavorite ? SystemImages.starFill : SystemImages.star)
                 .resizable()
                 .frame(width: 18, height: 18)
                 .foregroundStyle(user.isFavorite ? .yellowApp : .black.opacity(0.5))
