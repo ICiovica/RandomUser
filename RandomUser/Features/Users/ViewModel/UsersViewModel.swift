@@ -9,10 +9,15 @@ import Foundation
 
 class UsersViewModel: ObservableObject {
     @Published private(set) var users: [UserModel] = []
+    @Published private(set) var isLoading = false
     private var preloadModel = PreloadModel()
-    @Published var fetchAlertModel = FetchAlertModel()
+    var fetchAlertModel = FetchAlertModel()
     
     @MainActor func fetchUsers() async {
+        defer {
+            isLoading = false
+        }
+        isLoading = true
         do {
             let result = try await APIRequest().getUsers()
             switch result {

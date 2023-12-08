@@ -20,6 +20,9 @@ struct UsersListVw: View {
             }
         }
         .listStyle(.plain)
+        .overlay {
+            if vm.isLoading { ProgressView() }
+        }
         .alert(LocalizedStringKey(vm.fetchAlertModel.title),
                isPresented: $vm.fetchAlertModel.isPresented,
                actions: {
